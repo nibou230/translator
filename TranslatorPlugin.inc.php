@@ -70,7 +70,8 @@ class TranslatorPlugin extends GenericPlugin {
 			case 'plugins.generic.translator.controllers.listbuilder.LocaleFileListbuilderHandler':
 				// Allow the static page grid handler to get the plugin object
 				import($component);
-				$className = array_pop(explode('.', $component));
+				$exploded = explode('.', $component);
+				$className = array_pop($exploded);
 				$className::setPlugin($this);
 				return true;
 		}
